@@ -1,0 +1,297 @@
+{
+  "info": {
+    "name": "Baozi Store - API REST",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. POST - Criar Cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/clientes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "clientes"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Otavio3906573\",\n  \"clienteDesde\": \"2026-11-24\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "2. POST - Criar Produto",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/produtos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "produtos"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Baozi de Porco\",\n  \"preco\": 6.5,\n  \"estoque\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "3. POST - Criar Pedido",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/pedidos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "pedidos"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clienteId\": 1,\n  \"produtoId\": 1,\n  \"quantidade\": 6\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "4. GET - Listar Clientes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/clientes",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "clientes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "5. GET - Listar Produtos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/produtos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "produtos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "6. GET - Listar Pedidos",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/pedidos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "pedidos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "7. GET - Consultar Cliente por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/clientes/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "clientes",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "8. GET - Consultar Produto por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/produtos/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "produtos",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "9. GET - Consultar Pedido por ID",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/pedidos/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "pedidos",
+            "1"
+          ]
+        }
+      }
+    },
+    {
+      "name": "10. POST - Criar Produto (para teste do DELETE)",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/produtos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "produtos"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"nome\": \"Produto Teste\",\n  \"preco\": 1.0,\n  \"estoque\": true\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "11. DELETE - Apagar Produto de teste",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/produtos/2",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "produtos",
+            "2"
+          ]
+        }
+      }
+    },
+    {
+      "name": "12. GET - Listar Produtos (após o DELETE)",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/produtos",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "produtos"
+          ]
+        }
+      }
+    },
+    {
+      "name": "13. PUT - Atualizar Pedido (opcional)",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/pedidos/1",
+          "host": [
+            "{{baseUrl}}"
+          ],
+          "path": [
+            "pedidos",
+            "1"
+          ]
+        },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"clienteId\": 1,\n  \"produtoId\": 1,\n  \"quantidade\": 8\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8080"
+    }
+  ]
+}
